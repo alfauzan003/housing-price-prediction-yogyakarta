@@ -13,7 +13,7 @@ The trained model will be saved as model_cache.joblib.
 ## Predicting House Prices
 To predict house prices for new data:
 
-Edit the new_data dictionary in the train_model.py file with the desired values.
+Edit the new_data dictionary in the rf.py file with the desired values.
 
 Run the script again:
 
