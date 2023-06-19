@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict House Price</title>
+</head>
+<body>
+    <h1>Predict House Price</h1>
+    <form method="POST" action="/">
+        <label for="lokasi">Location:</label>
+        <select id="lokasi" name="lokasi">
+            <option value="Sleman">Sleman</option>
+            <option value="Yogyakarta">Yogyakarta</option>
+            <option value="Kulon Progo">Kulon Progo</option>
+            <option value="Bantul">Bantul</option>
+            <option value="Wates">Wates</option>
+        </select>
+        <br>
+        <label for="luas_bangunan">Building Area:</label>
+        <input type="number" id="luas_bangunan" name="luas_bangunan">
+        <br>
+        <label for="luas_tanah">Land Area:</label>
+        <input type="number" id="luas_tanah" name="luas_tanah">
+        <br>
+        <label for="kamar">Number of Rooms:</label>
+        <input type="number" id="kamar" name="kamar">
+        <br>
+        <label for="kamar_mandi">Number of Bathrooms:</label>
+        <input type="number" id="kamar_mandi" name="kamar_mandi">
+        <br>
+        <label for="listrik">Electricity Capacity:</label>
+        <input type="number" id="listrik" name="listrik">
+        <br>
+        <label for="interior">Interior:</label>
+        <select id="interior" name="interior">
+            <option value="Tak Berperabot">Tak Berperabot</option>
+            <option value="Lengkap">Lengkap</option>
+            <option value="Sebagian">Sebagian</option>
+        </select>
+        <br>
+        <label for="sertifikat">Certificate:</label>
+        <select id="sertifikat" name="sertifikat">
+            <option value="SHM - Sertifikat Hak Milik">SHM - Sertifikat Hak Milik</option>
+            <option value="SHGB - Hak Guna Bangunan">SHGB - Hak Guna Bangunan</option>
+            <option value="Sertifikat Belum Pecah">Sertifikat Belum Pecah</option>
+        </select>
+        <br>
+        <label for="parkir">Parking Capacity:</label>
+        <input type="number" id="parkir" name="parkir">
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if predicted_price %}
+        <h2>Predicted House Price: {{ predicted_price }}</h2>
+    {% endif %}
+</body>
+</html>
