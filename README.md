@@ -4,7 +4,7 @@
 Save the clean dataset as rumahcom_clean.csv in the project directory.
 
 ## Model Training and Evaluation
-Train the model and pemodelorm hyperparameter tuning:
+Train the model
 
 ```python model.py```
 

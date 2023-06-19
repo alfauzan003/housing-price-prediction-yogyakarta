@@ -14,12 +14,12 @@ def file_exists(filename):
         return False
 
 # Check if the preprocessed data is already available
-data_cache_file = "data_cache.joblib"
+data_cache_file = "cache/data_cache.joblib"
 if file_exists(data_cache_file):
     data, X_encoded, y = joblib.load(data_cache_file)
 else:
     # Read the CSV file if data is not cached
-    data = pd.read_csv("rumahcom_clean.csv")
+    data = pd.read_csv("data/rumahcom_clean.csv")
 
     # Prepare data
     X = data[["lokasi", "luas_bangunan", "luas_tanah", "kamar", "kamar_mandi", "listrik", "interior", "sertifikat", "parkir"]]
@@ -35,8 +35,8 @@ else:
 X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.2, random_state=42)
 
 # Check if the trained model is already available
-rf_model_cache_file = "rf_model_cache.joblib"
-xgb_model_cache_file = "xgb_model_cache.joblib"
+rf_model_cache_file = "cache/rf_model_cache.joblib"
+xgb_model_cache_file = "cache/xgb_model_cache.joblib"
 if file_exists(rf_model_cache_file):
     best_rf_model = joblib.load(rf_model_cache_file)
 else:

@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the CSV file
-data = pd.read_csv("yogyakarta_housing_price.csv")
+data = pd.read_csv("data/rumahcom.csv")
 
 # Clean lokasi
 ## Split the address into parts using comma as the delimiter
@@ -76,6 +76,6 @@ data["listrik"] = data["listrik"].astype(int)
 data = data.drop(["web-scraper-order", "web-scraper-start-url", "title", "title-href", "nama"], axis=1)
 
 # Save the updated data to a new CSV file
-data.to_csv("updated_file.csv", index=False)
-updated_data = pd.read_csv("updated_file.csv")
+data.to_csv("data/updated_file.csv", index=False)
+updated_data = pd.read_csv("data/updated_file.csv")
 print(updated_data.head())
