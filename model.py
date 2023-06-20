@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error, mean_absolute_percentage_error
 import xgboost as xgb
 import joblib
 
@@ -102,17 +102,21 @@ meta_model.fit(X_train_combined, y_train)
 train_rmse = mean_squared_error(y_train, meta_model.predict(X_train_combined), squared=False)
 train_r2 = r2_score(y_train, meta_model.predict(X_train_combined))
 train_mae = mean_absolute_error(y_train, meta_model.predict(X_train_combined))
+train_mape = mean_absolute_percentage_error(y_train, meta_model.predict(X_train_combined))
 test_rmse = mean_squared_error(y_test, meta_model.predict(X_test_combined), squared=False)
 test_r2 = r2_score(y_test, meta_model.predict(X_test_combined))
 test_mae = mean_absolute_error(y_test, meta_model.predict(X_test_combined))
+test_mape = mean_absolute_percentage_error(y_test, meta_model.predict(X_test_combined))
 
 print("Combined Model:")
 print("Training RMSE:", train_rmse)
 print("Training R2 Score:", train_r2)
 print("Training MAE:", train_mae)
+print("Training MAPE:", train_mape)
 print("Testing RMSE:", test_rmse)
 print("Testing R2 Score:", test_r2)
 print("Testing MAE:", test_mae)
+print("Testing MAPE:", test_mape)
 
 
 # Predict house price
