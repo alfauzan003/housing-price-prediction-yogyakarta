@@ -1,4 +1,5 @@
 # Tugas Akhir Data Science
+Predict the appropriate price for a house based on its specifications, such as square footage, number of rooms, location, etc. The model used is a combination of Random Forest and XGB Regressor.
 
 ## Dataset Preparation
 
